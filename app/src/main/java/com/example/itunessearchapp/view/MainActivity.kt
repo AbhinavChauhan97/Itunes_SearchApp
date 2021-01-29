@@ -8,6 +8,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        supportFragmentManager.beginTransaction().add(R.id.fragment_container,SongsFragment()).commit()
+        val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+        if(fragment == null) {
+            supportFragmentManager.beginTransaction().add(R.id.fragment_container, SongsFragment())
+                .commit()
+        }
     }
 }
