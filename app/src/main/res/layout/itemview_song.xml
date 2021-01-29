@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="song"
+            type="com.example.itunessearchapp.model.Song" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/artWork"
+        android:layout_margin="10dp"
+        imageUrl="@{song.artworkUrl100}"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"/>
+
+    <TextView
+        android:id="@+id/trackName"
+        android:text="@{song.trackName}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"/>
+
+</LinearLayout>
+
+</layout>
